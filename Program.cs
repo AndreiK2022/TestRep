@@ -1,13 +1,18 @@
 ﻿Console.WriteLine("Введите элементы массива через пробел: ");
 string[] array = Console.ReadLine()!.Split(" ").ToArray();
+
+List<string> elements = new List<string>();
+
 foreach (var element in array)
 {
     if (element.Length <= 3)
     {
-        Console.Write($"{element} ");
+        elements.Add(new string(element));
     }
-    else
-    {
-        Console.Write("");
-    }
+}
+
+string[] newArray = elements.ToArray();
+foreach (var item in newArray)
+{
+    Console.Write($"{item} ");
 }
